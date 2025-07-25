@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --backgroundColor: #fdf0d5;
+  --primaryColor: #780000;
+  --redColor: #c1121f;
+  --textColor: #003049;
+  --accentColor: #669bbc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Noto Sans", "Roboto Flex", "Roboto", sans-serif;
+  padding-left: 4vh;
+  padding-right: 4vw;
+  padding-top: 2vh;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
