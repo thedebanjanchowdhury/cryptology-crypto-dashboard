@@ -1,0 +1,28 @@
+.search-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem 1rem;
+  color: white;
+  background-color: var(--primaryColor);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3rem;
+  margin-top: 3rem;
+}
+
+.search-flex input {
+  background-color: var(--primaryColor);
+  width: 100%;
+  font-family: "sans-serif" !important;
+  font-size: 1.5rem;
+  color: white;
+  border:none;
+  font-weight: 600;
+}
+
+.search-flex input:focus-visible {
+    outline: none;
+}

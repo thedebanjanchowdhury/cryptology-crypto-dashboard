@@ -5,8 +5,17 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { useState } from "react";
+import Grid from "../Grid";
+import "./style.css";
+import Pagination from "../Pagination";
 
-export default function LabTabs() {
+// list component imports
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableContainer from "@mui/material/TableContainer";
+import ListComponent from "../List";
+
+export default function Tabs({ coins }) {
   const [value, setValue] = useState("grid");
 
   const handleChange = (event, newValue) => {
@@ -25,7 +34,7 @@ export default function LabTabs() {
     color: "var(--textColor)",
     fontWeight: 600,
     textTransform: "capitalize",
-    fontSize: "1.2rem",
+    fontSize: "1.5rem",
     "&.Mui-selected": {
       color: "var(--primaryColor)",
     },
@@ -34,13 +43,33 @@ export default function LabTabs() {
   return (
     <ThemeProvider theme={theme}>
       <TabContext value={value}>
-        <TabList onChange={handleChange} variant="fullWidth">
-          <Tab label="Grid" value="grid" sx={style} />
-          <Tab label="List" value="list" sx={style} />
+        <TabList className="tabs" onChange={handleChange} variant="fullWidth">
+          <Tab label="LIST OF CRYPTOS" value="grid" sx={style} />
+          {/* <Tab label="List" value="list" sx={style} /> */}
         </TabList>
 
-        <TabPanel value="grid">Grid</TabPanel>
-        <TabPanel value="list">List</TabPanel>
+        <TabPanel value="grid">
+          <div className="grid-flex">
+            {coins.map((coin, i) => {
+              return <Grid coin={coin} key={coin.id || i} />;
+            })}
+          </div>
+        </TabPanel>
+
+        {/* <TabPanel value="list">
+          <div className="table-container">
+            <h1>Development in progress</h1>
+            <TableContainer elevation={4}>
+              <Table sx={{ minWidth: 650 }} aria-label="coins table">
+                <TableBody>
+                  {coins.map((coin, i) => {
+                    return <ListComponent coin={coin} key={coin.id || i} />;
+                  })}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
+        </TabPanel> */}
       </TabContext>
     </ThemeProvider>
   );

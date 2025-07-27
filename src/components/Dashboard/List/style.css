@@ -1,0 +1,30 @@
+.table-container {
+  margin-top: 20px;
+}
+
+.coin-image-cell {
+  width: 80px;
+  min-width: 80px;
+}
+
+.coin-symbol {
+  text-transform: uppercase;
+  text-align: justify;
+}
+
+.coin-name {
+  width: 20rem;
+  text-align: justify;
+}
+
+.first-column {
+  display: flex;
+  /* align-items: center; */
+  gap: 3rem;
+}
+
+.details-flex {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
